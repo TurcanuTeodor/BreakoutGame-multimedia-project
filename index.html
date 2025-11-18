@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Game</title>
+    <meta name="description" content="Classic Breakout game">
+    <link rel="stylesheet" href="style/breakout.css">
+</head>
+<body>
+    <h1 class="title">Breakout Game</h1>
+    <main class="game-wrapper">
+        <canvas id="breakoutCanvas" width="400" height="500" aria-label="Breakout game canvas"></canvas>
+
+        <div class="sound">
+            <button id="sound" aria-pressed="false" aria-label="Toggle sound" title="Toggle sound">
+                <img src="img/SOUND_ON.png" alt="Sound on" width="30" height="30">
+            </button>
+        </div>
+
+        <div id="gameOver" aria-hidden="true">
+            <img src="img/youwon.png" alt="You won!" id="youWon">
+            <img src="img/gameover.png" alt="Game over" id="youLose">
+            <div id="restart" role="button" tabindex="0">Play Again!</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Breakout Game - Stage 1</p>
+    </footer>
+
+    <script src="components.js" defer></script>
+    <script src="game.js" defer></script>
+</body>
+</html>
