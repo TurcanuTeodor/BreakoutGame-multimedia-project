@@ -23,6 +23,42 @@ let isGameOver=false;
 let leftArrow=false;
 let rightArrow= false;
 
+// sound toggle (mute/unmute all game sounds and swap icon)
+const soundButton = document.getElementById("sound");
+const soundIcon = soundButton ? soundButton.querySelector("img") : null;
+let soundOn = true;
+
+function applySoundState() {
+    const audioList = [
+        wallHitSound,
+        brickHitSound,
+        lifeLostSound,
+        paddleHitSound,
+        winSound
+    ];
+
+    audioList.forEach(a => { if (a) a.muted = !soundOn; });
+
+    if (soundIcon) {
+        soundIcon.src = soundOn ? "img/SOUND_ON.png" : "img/SOUND_OFF.png";
+        soundIcon.alt = soundOn ? "Sound on" : "Sound off";
+    }
+    if (soundButton) {
+        soundButton.setAttribute("aria-pressed", String(!soundOn));
+        soundButton.title = soundOn ? "Mute sound" : "Unmute sound";
+    }
+}
+
+if (soundButton) {
+    soundButton.addEventListener("click", () => {
+        soundOn = !soundOn;
+        applySoundState();
+    });
+}
+
+// initialize sound UI and state once at load
+applySoundState();
+
 
 //create the paddle (js object)
 const paddle ={
@@ -308,12 +344,12 @@ restart.addEventListener("click",()=>{
 });
 
 function showYouWin(){
-    gameOverScreen.style.display="block"; //makes it visible
+    gameOverScreen.style.display="flex"; //makes it visible and centers content
     youWon.style.display="block";
 }
 
 function showYouLose(){
-    gameOverScreen.style.display="block";
+    gameOverScreen.style.display="flex";
     youLose.style.display="block";
 }
 
