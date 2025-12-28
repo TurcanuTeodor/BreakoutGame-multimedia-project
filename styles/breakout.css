@@ -1,5 +1,5 @@
 /* 
-  ----- GLOBAL RESET & BASE-----------------
+    GLOBAL RESET & BASE----------------------------------------
 */
 
 * {
@@ -27,7 +27,7 @@ h1.title {
 
 
 /* 
-   --------ANIMATIONS-------------------
+   ANIMATIONS------------------------------------------------
 */
 
 /* neon pulse for arcade & screen */
@@ -39,7 +39,7 @@ h1.title {
 
 
 /*
-  -------- ARCADE CABINET (MAIN CONTAINER)--------------
+  ARCADE CABINET (MAIN CONTAINER)---------------------------
 */
 
 .arcade {
@@ -71,7 +71,7 @@ h1.title {
 
 
 /* 
-   --------------ARCADE BUTTONS (BOTTOM)----------------
+   ARCADE BUTTONS (at the bottom)--------------------------------
  */
 
 .arcade-buttons {
@@ -141,7 +141,7 @@ h1.title {
 
 
 /* 
-   -------------ARCADE SCREEN (BEZEL + GLASS)--------------
+   ARCADE SCREEN (BEZEL + GLASS)-----------------------------
  */
 
 .arcade-screen {
@@ -177,7 +177,7 @@ h1.title {
 
 
 /* 
-   -----------GAME CANVAS------------------
+   GAME CANVAS------------------------------------------
  */
 
 #breakoutCanvas {
@@ -212,7 +212,7 @@ h1.title {
 
 
 /* 
-   -------------UI ELEMENTS---------------
+   UI ELEMENTS--------------------------------------
 */
 
 .sound {
@@ -234,7 +234,7 @@ h1.title {
 
 
 /* 
-   -----------GAME OVER OVERLAY-------------------
+   GAME OVER OVERLAY---------------------------------------
  */
 
 #gameOver {
@@ -272,7 +272,7 @@ h1.title {
 
 
 /* 
-   -----------FOOTER------------------
+   FOOTER------------------------------------------
 */
 
 footer {

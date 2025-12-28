@@ -83,7 +83,7 @@ function drawPaddle(){
 document.addEventListener("keydown", (event)=>{
     if(event.key ==="ArrowLeft") leftArrow =true;
     if(event.key ==="ArrowRight") rightArrow =true;
-}); //moves smoothly each direction until you lift your finger, without needing to press repeatedly left-right
+}); //moves smoothly each direction while you press the key, without needing to press repeatedly left-right
 
 //when you lift your finger 
 document.addEventListener("keyup", (event)=>{
