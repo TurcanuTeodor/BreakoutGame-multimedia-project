@@ -25,7 +25,7 @@ let rightArrow= false;
 
 // sound toggle (mute/unmute all game sounds and swap icon)
 const soundButton = document.getElementById("sound");
-const soundIcon = soundButton ? soundButton.querySelector("img") : null;
+const soundIcon = soundButton ? soundButton.querySelector("img") : null; //returns the 1st elem that matches the specif css img
 let soundOn = true;
 
 function applySoundState() {
@@ -274,9 +274,20 @@ function draw(){
     drawBall();
     drawBricks();
 
-    showGameStats(score, canvas.width/2+30, 30, scoreImg, canvas.width/2-5, 10);
-    showGameStats(life, canvas.width-30, 66, lifeImg, canvas.width -60, 45);
-    showGameStats(level, canvas.width-30, 35, levelImg, canvas.width-60, 10);
+    //all stats in a single row with equal spacing
+    const statsY = 30; // vertical position for all text
+    const imgY = 10;   // vertical position for all images
+    const spacing = 100; // distance between each stat group (image + text)
+    const startX = 20;  // starting position from left
+    
+    //position 1
+    showGameStats(score, startX + 35, statsY, scoreImg, startX, imgY);
+    
+    //position 2
+    showGameStats(life, startX + spacing + 35, statsY, lifeImg, startX + spacing, imgY);
+    
+    //position 3
+    showGameStats(level, startX + spacing*2 + 35, statsY, levelImg, startX + spacing*2, imgY);
 }
 
 
@@ -362,4 +373,28 @@ function loop(){
     requestAnimationFrame(loop); //call loop again
 }
 
-loop();
+document.querySelector('.arcade-btn.red').addEventListener('mousedown',function()
+{
+    leftArrow=true;
+});
+
+document.querySelector('.arcade-btn.red').addEventListener('mouseup', function(){
+    leftArrow=false;
+});
+
+document.querySelector('.arcade-btn.blue').addEventListener('mousedown',function(){
+    rightArrow=true;
+});
+
+document.querySelector('.arcade-btn.blue').addEventListener('mouseup',function(){
+    rightArrow=false;
+});
+
+const startButton = document.getElementById('start');
+const startGameScreen= document.getElementById('startGame');
+
+startButton.addEventListener('click', ()=>{
+    startGameScreen.style.display='none';
+    loop(); // start the game 
+
+})
